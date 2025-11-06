@@ -12,7 +12,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 333px 390px;
+  /* padding: 333px 390px; */
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -60,7 +60,8 @@ ol {
   align-items: end;
   gap: 30px;
   width: 1140px;
-  height: 534px;
+  padding: 133px 30px;
+  box-sizing: border-box;
 }
 
 /* Блок с основным видео и формой */
@@ -68,7 +69,7 @@ ol {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 16px; /* Отступ между видео и формой */
+  gap: 16px; /*Отступ между видео и формой*/
   margin-top: 78px;
 }
 
@@ -83,38 +84,39 @@ ol {
 /* Контейнер основного видео */
 .result__video-container {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 711px;
+  height: 386px;
+  /* margin-bottom: 16px; */
 }
 
 /* Блок с карточками */
 .content__details {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 399px;
   height: 100%;
 }
 
-/* Заголовок секции details */
+/* Заголовок секции details
 .content__details .title {
   width: 399px;
   height: 211px;
   margin-bottom: 20px;
-}
+} */
 
 /* Список карточек */
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Отступ между карточками */
+  gap: 30px; /* Отступ между карточками */
 }
 
 /* Контейнер списка карточек */
 .content__list-container {
   height: 298px;
-  width: 405px;
+  width: 100%;
   overflow-y: auto;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   display: flex;
   flex-direction: column;
   gap: 30px; /* Отступ между последней карточкой и кнопкой "Показать еще" */
@@ -125,13 +127,15 @@ ol {
   display: flex;
   align-items: start;
   gap: 10px; /* Отступ между картинкой и текстом */
+  max-width: 390px;
 }
 
 /* Изображение в карточке */
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
-  min-width: 194px;
+  /* min-width: 194px; */
+  object-position: center;
   object-fit: cover;
   flex-shrink: 0; 
 }
@@ -149,23 +153,24 @@ ol {
   align-items: start; /* Прижимаем к низу */
   gap: 40px; /* Отступ между полями */
   width: 711px;
-  height: 100%;
+  height: 54px;
+  /* position: relative; */
 }
 
 /* Поле Город */
 .search-form__fieldset:first-child {
-width: 225px;
+  min-width: 225px;
 }
 
 /* Поле Время суток */
 .search-form__fieldset:last-child {
-  width: 212px;
+  min-width: 212px;
 }
 
 /* Кнопка Найти */
 .search-form__submit-button {
-  width: 194px;
-  height: 34px;
+  min-width: 194px;
+  /* height: 34px; */
   align-self: end;
   margin-top: 20px;
 }
@@ -186,6 +191,10 @@ width: 225px;
   line-height: 0.94;
   text-transform: uppercase;
   color: #fff;
+  width: 259px;
+  margin-bottom: 26px;
+  margin-top: 139px;
+  margin-right: 139px;
 }
 
 /* Акцент в заголовке ПО */
@@ -198,8 +207,9 @@ width: 225px;
   text-decoration: none;
   color: #fff;
   display: block;
-  padding: 2px;
-  margin: 2px;
+  /* padding: 2px;
+  margin: 2px; */
+  max-width: 390px;
 }
 
 /* Текущая карточка фон */
@@ -245,7 +255,7 @@ width: 225px;
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 200px;
-  max-height: 30px;
+  /* max-height: 30px; */
 }
 
 /* Описание карточки */
@@ -290,7 +300,7 @@ width: 225px;
   align-items: center;
   gap: 5px;
   width: fit-content;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 /* Псевдочекбокс */
@@ -346,21 +356,17 @@ width: 225px;
   font-size: 18px;
   font-weight: 700;
   text-align: center;
-  /* cursor: pointer; */
+  cursor: pointer;
   padding: 0;
-}
-
-/* Кнопка Найти */
-.search-form__submit-button {
-  width: 194px;
-  height: 34px;
-  align-self: end;
+  min-height: 34px;
 }
 
 /* Кнопка Показать еще */
 .more-button {
-  width: 100%;
-  height: 34px;
+  /* width: 100%; */
+  /* height: 34px; */
+  width: 390px;
+  gap: 30px;
 }
 
 /* При наведении на кнопку */
@@ -383,15 +389,32 @@ width: 225px;
   outline-offset: 1px;
 }
 
-/* Для всех элементов добавляем курсоры */
+/* Для всех элементов добавляем курсоры
 .button,
 .search-form__label,
 .content__card-link {
   cursor: pointer;
-}
+} */
 
 /* Относительное позиционирование */
 .result__video-container,
 .content__list-container {
   position: relative;
+}
+
+/* Фокус для текстового поля */
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* Фокус для чекбоксов */
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* Убираем подчеркивание при фокусе у чекбоксов */
+.search-form__label:has(:focus-visible) .search-form__label-text {
+  text-decoration: none;
 }
