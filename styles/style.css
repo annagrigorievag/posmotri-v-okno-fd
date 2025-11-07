@@ -60,7 +60,7 @@ ol {
   align-items: end;
   gap: 30px;
   width: 1140px;
-  padding: 133px 30px;
+  /* padding: 133px 30px; */
   box-sizing: border-box;
 }
 
@@ -153,7 +153,7 @@ ol {
   align-items: start; /* Прижимаем к низу */
   gap: 40px; /* Отступ между полями */
   width: 711px;
-  height: 54px;
+  /* height: 54px; */
   /* position: relative; */
 }
 
@@ -193,8 +193,8 @@ ol {
   color: #fff;
   width: 259px;
   margin-bottom: 26px;
-  margin-top: 139px;
-  margin-right: 139px;
+  /* margin-top: 139px; */
+  /* margin-right: 139px; */
 }
 
 /* Акцент в заголовке ПО */
